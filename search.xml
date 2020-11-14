@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/11/13/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>欧拉定理及其拓展</title>
+    <url>/2020/11/14/%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86%E5%8F%8A%E5%85%B6%E6%8B%93%E5%B1%95/</url>
+    <content><![CDATA[<p>欧拉定理:若$gcd(a,n)=1$,则$a^{\varphi(m)}\equiv1\pmod{m}$</p>
+<p>证明:</p>
+<p>构造一个集合$b=\{b_i|gcd(m,b_i)=1\}$，该集合最多有$\varphi(m)$个数</p>
+<p>$gcd(a,m)=1,gcd(b_i,m)=1(1\leq i\leq\varphi(m))$</p>
+<p>构造集合$c=\{c_i|b_i\times a\}$</p>
+<p>显而易见，$c_i\not\equiv c_j\pmod{m}$</p>
+<p>$a^{\varphi(m)}\times\prod^{\varphi(m)}_{i=1}\times b_i\equiv \prod^{\varphi(m)}_{i=1}a\times b_i\equiv \prod^{\varphi(m)}_{i=1}b_i\pmod{m}$</p>
+<p>$\therefore m|a^{\varphi(m)}\times\prod^{\varphi(m)}_{i=1}\times b_i-\prod^{\varphi(m)}_{i=1}b_i$</p>
+<p>$\therefore m|(a^{\varphi(m)}-1)\times\prod^{\varphi(m)}_{i=1}b_i$</p>
+<p>$\therefore m|(a^{\varphi(m)}-1)$</p>
+<p>$\therefore a^{\varphi(m)}\equiv 1\pmod{m}$</p>
+<p>得证</p>
+<hr>
+<p>拓展欧拉定理</p>
+<p>$a^{c} \equiv \begin {cases}a^{c \mod \varphi(m)}&amp;gcd(a,m)=1\\a^c&amp;gcd(a,m)\not=1 \land c\leq \varphi(m) \\ a^{c\mod\varphi(m)+\varphi(m)}&amp;gcd(a,m)\not=1\land \varphi(m) \leq c\end{cases}$</p>
+<p>证明：</p>
+<p>情况1由欧拉定理可以得到，此处不再赘述</p>
+<p>情况2十分显然，略</p>
+<p>情况3：</p>
+<p>显然，当$a = 1$时，等式成立</p>
+<p>下面来讨论$a\geq1$的情况</p>
+<p>先证明，若$a=p^k$，其中$p$为质数，则情况3成立</p>
+<p>设$m=s\times p^r$且$gcd(s,p^r)=1$</p>
+<p>根据欧拉定理，$p^{\varphi(s)}\equiv1\pmod{s}$</p>
+<p>$\because\varphi$为积性函数,可得$\varphi(m)=\varphi(s)\times\varphi(p^r)$</p>
+<p>$\therefore p^{\varphi(m)}=p^{\varphi(s)\times\varphi(p^r)}=(p^{\varphi(s)})^{\varphi(p^r)}\equiv1^{\varphi(p^r)}\pmod{s}$</p>
+<p>$\therefore p^{\varphi(m)} \equiv 1\pmod{s}$</p>
+<p>$\therefore p^{\varphi(m)+r}\equiv p^r\pmod{m}$</p>
+<p>$\therefore p^{r-\varphi(m)}\equiv p^r\pmod{m}$</p>
+<p>$\therefore p^c = p^{c-r+r} \equiv p^{c-r+r+\varphi(m)}\equiv p^{c+\varphi(m)}\pmod{m}$</p>
+<p>$\because c\geq r,r\geq\varphi(m)$</p>
+<p>$\therefore c\geq\varphi(m)$</p>
+<p>$\therefore (p^{r})^c\equiv (p^{r})^{c\mod\varphi(m)+\varphi(m)}\pmod{m}$</p>
+<p>根据唯一分解定理及数学归纳法，可知对于任意正整数$a$，上述式子均成立</p>
+<p>得证</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>费马小定理</title>
+    <url>/2020/11/14/%E8%B4%B9%E9%A9%AC%E5%AE%9A%E7%90%86/</url>
+    <content><![CDATA[<p>费马小定理：若$p$是一个质数,则$a^p\equiv a\pmod{p}$</p>
+<p>证明：</p>
+<p>设$p|(a^p-a)$</p>
+<p>则$(a+1)^p-(a+1)$</p>
+<p>$=\sum^{p}_{k=0}C^k_p\times a^k-a-1$</p>
+<p>$=\sum^{p-1}_{k=1}C^k_p\times a^k +a^p-a$</p>
+<p>$\because\sum^{p-1}_{k=1}C^k_p\times a^k \equiv 0\pmod{p}$</p>
+<p>且$p|(a^p-a)$</p>
+<p>$\therefore (a+1)^p-(a+1)\equiv 0\pmod{p}$</p>
+<p>$\because$在$a=1$时，$a^p\equiv 1\pmod{p}$,且若$p|(a^p-a)$，则$(a+1)^p-(a+1)\equiv 0\pmod{p}$</p>
+<p>根据数学归纳法知，$a^p-a\equiv 0\pmod{p}$</p>
+<p>$\therefore a^{p-1}\equiv 1\pmod{p}$</p>
+<p>得证</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+      </tags>
+  </entry>
+</search>
