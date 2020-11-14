@@ -78,4 +78,580 @@
         <tag>数学</tag>
       </tags>
   </entry>
+  <entry>
+    <title>lucas定理</title>
+    <url>/2020/11/14/Lucas/</url>
+    <content><![CDATA[<p>$Lucas+ExLucas$</p>
+<p>$Lucas$定理</p>
+<p>$C^m_n\equiv C^{m/p}_{n/p}\times C^{m \mod p}_{n \mod p}$</p>
+<p>证明:</p>
+<p>设$C^{m}_{n}=C^{sp+q}_{tp+r}$</p>
+<p>$C^f_p\equiv 0(0&lt;f&lt;p)$</p>
+<p>考虑构造二项式</p>
+<p>$(1+x)^n \equiv (1+x)^{sp+q} \equiv ((1+x)^p)^s \times (1+x)^q \equiv (1+x^p)^s \times (1+x)^q \equiv \sum^s_{i=0}C^i_s x^{ip} \times \sum^q_{j=0} C^j_q x^j \pmod{p}$</p>
+<p>考虑第$tp+r$项的系数，得到$C^{tp+r}_{sp+q}\equiv C_s^t\times C^r_q\pmod{p}$</p>
+<p>$ExLucas$</p>
+<p>解决$p$不是质数的问题</p>
+<p>根据唯一分解定理,$p=\prod^n_{i=0}p_i^{k_i}$</p>
+<p>可以使用$CRT$解决</p>
+<p>因此我们只要解决$C^m_n\pmod{p^k}$</p>
+<p>化一下:$C^m_n=\frac{n!}{m!(n-m)!}\equiv\frac{\frac{n!}{p^{k_1}}}{\frac{m_1}{p^{k_2}}\times\frac{(n-m)!}{p^{k_3}}}\times p^{k_1-k_2-k_3}\equiv\frac{\frac{n!}{p^{k_1}}}{\frac{m_1}{p^{k_2}}\times\frac{(n-m)!}{p^{k_3}}}\pmod{p}$</p>
+<p>因此我们可以转化为$\frac{n!}{p^a}\mod p^k$</p>
+<p>递归计算即可</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>中国剩余定理</title>
+    <url>/2020/11/14/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86/</url>
+    <content><![CDATA[<p>$0728$</p>
+<p>中国剩余定理以及拓展中国剩余定理证明</p>
+<p>中国剩余定理:设正整数$m_1,m_2,$……$m_k$两两互素，则同余方程组</p>
+<p> $\begin{cases}x\equiv a_1 \pmod{m_1}\\x\equiv a_2 \pmod{m_2}\.…..\\x\equiv a_k \pmod{m_k}\end{cases}$ </p>
+<p> 有整数解，则解在$\mod M=\prod^{k}_{i=1}m_i$下有意义，则$x=(a_1\times M_1\times M_1^{-1}+a_2\times M_2\times M_2^{-1}+……+a_k\times M_k\times M_k^{-1})\mod M$</p>
+<p>其中$M_i=M/m_i,M_i^{-1}\times M_i \equiv 1\pmod{m}$</p>
+<p>拓展中国剩余定理：</p>
+<p>比中国剩余定理少了模数两两互素的条件</p>
+<p>方法:</p>
+<p>先从简单的情况考虑</p>
+<p>$\because\begin{cases}x\equiv c_1\pmod{m_1}\\x\equiv c_2\pmod{m_2}\end{cases}$</p>
+<p>$\therefore\begin{cases}x= k_1\times m_1+c_1\\x= k_2\times m_2+c_2\end{cases}$</p>
+<p>$\therefore k_1\times m_1+c_1=k_2\times m_2+c_2$</p>
+<p>$\therefore k_1\times m_1=c_2-c_1+k_2\times m_2$</p>
+<p>$\therefore \frac{m_1}{\gcd(m_1,m_2)}\times k_1=\frac{c_2-c_1}{\gcd(m1,m2)}+\frac{m_2\times k_2}{\gcd(m_1,m_2)}$</p>
+<p>$\therefore \frac{m_1}{\gcd(m_1,m_2)}\times k_1 \equiv \frac{c_2-c_1}{\gcd(m_1,m_2)}\pmod{\frac{m_2}{\gcd(m_1,m_2)}}$</p>
+<p>定义$inv(a,b)$为$a$在模$b$意义下的逆元</p>
+<p>$\therefore k_1\equiv inv(\frac{m_1}{\gcd(m_1,m_2)},\frac{m_2}{\gcd(m_1,m_2)})\times\frac{c_2-c_1}{\gcd(m_1,m_2)}\pmod{\frac{m_2}{\gcd(m_1,m_2)}}$</p>
+<p>$\therefore k_1=inv(\frac{m_1}{\gcd(m_1,m_2)},\frac{m_2}{\gcd(m_1,m_2)})\times\frac{c_2-c_1}{\gcd(m_1,m_2)}\times\frac{m_2}{\gcd(m_1,m_2)}\times y$</p>
+<p>$\therefore x\equiv inv(\frac{m_1}{\gcd(m_1,m_2)},\frac{m_2}{\gcd(m_1,m_2)})\times\frac{c_2-c_1}{\gcd(m_1,m_2)}\times m_1+c_1\pmod{\frac{m_1\times m_2}{\gcd(m_1,m_2)}}$</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>二次剩余</title>
+    <url>/2020/11/14/%E4%BA%8C%E6%AC%A1%E5%89%A9%E4%BD%99/</url>
+    <content><![CDATA[<p>$2$次剩余</p>
+<p>解决形如$x^2\equiv n\pmod{p}$的问题</p>
+<p>解:</p>
+<p>构造$a$使$a$非二次剩余</p>
+<p>$\because a^{p-1}\equiv 1 \pmod{p}$</p>
+<p>$\therefore a^{p-1}-1\equiv 0\pmod{p}$</p>
+<p>$\therefore (a^{\frac{p-1}{2}}+1)(a^{\frac{p-1}{2}}-1)\equiv 0\pmod{2}$</p>
+<p>$\therefore a^{\frac{p-1}{2}}\equiv \pm 1\pmod{p}$</p>
+<p>$\because a^{\frac{p-1}{2}}\equiv -1 \pmod{p}$时，$p\notin \mathbb{R}$</p>
+<p>$\therefore a^{\frac{p-1}{2}}\equiv 1 \pmod{p}$</p>
+<p>设$\omega = \sqrt{a^2-n}$</p>
+<p>$(\omega^2)^{\frac{p-1}{2}}=\omega^{p-1}\equiv-1\pmod{p}$</p>
+<p>$\because a^{p-1}\equiv 1 \pmod{p}$</p>
+<p>$\therefore a^p\equiv a\pmod{p}$</p>
+<p>$\because \omega^{p-1}\equiv -1\pmod{p}$</p>
+<p>$\therefore \omega^p \equiv -\omega\pmod{p}$</p>
+<p>$\therefore a-\omega\equiv a^p+\omega^{p}\pmod{p}$</p>
+<p>$\therefore (a+\omega)^p\equiv a-\omega\pmod{p}$</p>
+<p>$\therefore (a+\omega)^{p+1}\equiv n\pmod{p}$</p>
+<p>$\therefore x=(a+\omega)^{\frac{p+1}{2}}$</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>斯特林反演</title>
+    <url>/2020/11/14/%E6%96%AF%E7%89%B9%E6%9E%97%E5%8F%8D%E6%BC%94/</url>
+    <content><![CDATA[<p>第1,2类斯特林数+斯特林反演</p>
+<p>第1类:</p>
+<p>概念:$\begin{bmatrix}n\\k\end{bmatrix}$表示将$n$个数的序列划分为$k$个圆排列的个数</p>
+<p>公式:$\begin{bmatrix}n\\k\end{bmatrix}=\begin{bmatrix}n-1\\k-1\end{bmatrix}+\begin{bmatrix}n-1\\k\end{bmatrix}\times(n-1)$</p>
+<p>原因:$\begin{bmatrix}n-1\\k-1\end{bmatrix}$表示将最后一个数单独创建一个圆排列的方案数</p>
+<p>$\begin{bmatrix}n-1\\k\end{bmatrix}$表示将最后一个数插入前$k$个圆排列的方案数.对于每个圆排列,能插入的位置数即为圆排列的大小,所以总的插入数为$n-1$</p>
+<p>多项式表示:</p>
+<p>$\begin{bmatrix}n\\k\end{bmatrix}$为$\prod^{n-1}_{i=0}(x+i)$的$k$次项系数</p>
+<p>证明:略</p>
+<p>利用上多项式,可以用FFT求,复杂度为$O(n\log^2n)$</p>
+<p>还可以更优秀!</p>
+<p>当我们求出$f_n(x)=\prod^{n-1}_{i=0}(x+i)$,我们可以求出$f_{2n}$</p>
+<p>构造$g_n(x)=\prod^{n-1}_{i=0}(x+n+i)$</p>
+<p>显然$f_{2n}(x)=f_n(x)g_n(x)$</p>
+<p>设$f_n(x)$已求出,$f_n(x)=\sum^n_{i=0}a_ix^i$</p>
+<p>$g_n(x)=\sum^n_{i=0}$</p>
+<p>$=\sum^n_{i=0}\sum^i_{j=0}a_i\binom{i}{j}n^{i-j}x^j$</p>
+<p>$=\sum^n_{i=0}\sum^i_{j=0}a_i\frac{i!}{(i-j)!j!}n^{i-j}x^j$</p>
+<p>$=\sum^n_{i=0}\frac{x^j}{j!}\sum^n_{i=j}(a_ii!)\frac{n^{i-j}}{(i-j)!}$</p>
+<p>$=\sum^n_{i=0}\frac{x^i}{i!}\sum^{n-i}_{j=0}(a_{i+j}(i+j)!)\frac{n^j}{j!}$</p>
+<p>后一个求和式满足卷积形式,将多项式$A$设为$\sum^n_{i=0}a_i(i+j)!x^j$,$B$设为$\sum^n_{i=0}\frac{n^i}{i!}x^{n-i}$</p>
+<p>将$A*B$，再左移$n$位即可</p>
+<p>总复杂度:$O(n\log n)$</p>
+<p>第2类斯特林数</p>
+<p>定义:$\begin{Bmatrix}n\\m\end{Bmatrix}$表示$n$个不同的小球放在$m$个相同的盒子里的方案数</p>
+<p>递推式:$\begin{Bmatrix}n\\m\end{Bmatrix}=\begin{Bmatrix}n-1\\m-1\end{Bmatrix}+m\begin{Bmatrix}n-1\\m\end{Bmatrix}$</p>
+<p>原因:如果不独占一盒,那把球放进任意一个盒子,盒子不同,多乘一个$m$,否则单独放一个盒子。</p>
+<p>同样的,我们也可以考虑容斥原理</p>
+<p>$\begin{Bmatrix}n\\m\end{Bmatrix}=\frac{1}{m!}\sum^m_{k=0}(-1)^k\binom{m}{k}(m-k)^n$</p>
+<p>注意到这个式子是一个卷积,所以可以在$O(n\log n)$的时间内求出$\begin{Bmatrix}n\\m\end{Bmatrix}$</p>
+<p>性质:$n^k=\sum^k_{i=0}\begin{Bmatrix}k\\i\end{Bmatrix}\times i!\times\binom{n}{i}$</p>
+<p>定义式:$\prod^m_{i=0}(n-i)=\sum^m_{k=0}\begin{Bmatrix}m\\k\end{Bmatrix}\prod^k_{i=0}(n-i)$</p>
+<p>结论+1:$\begin{Bmatrix}n\\m\end{Bmatrix}=\frac{1}{k!}\sum^k_{i=0}(-1)^{k-i}\binom{k}{i}i^m$</p>
+<p>证明:略</p>
+<p>斯特林反演</p>
+<p>对于第1,2类斯特林数的反演:</p>
+<p>$q_n=\sum^n_{i=1}\begin{Bmatrix}n\\i\end{Bmatrix}\to p_n=\sum^n_{i=0}(-1)^{n-i}\begin{bmatrix}n\\m\end{bmatrix}q_i$</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>狄利克雷卷积</title>
+    <url>/2020/11/14/%E7%8B%84%E5%88%A9%E5%85%8B%E9%9B%B7%E5%8D%B7%E7%A7%AF/</url>
+    <content><![CDATA[<p>狄利克雷卷积</p>
+<p>1.积性函数</p>
+<p>若一个数论函数$f$满足,当$n\not=m$时有:$f(nm)=f(n)f(m)$</p>
+<p>则$f$为积性函数</p>
+<p>常见积性函数:$\varphi$,$\sigma_0$,$\epsilon$<br>下面给出证明:</p>
+<p>1.$\varphi$为积性函数</p>
+<p>考虑构造矩阵</p>
+<p>$\begin{bmatrix}1&amp;2&amp;\cdots&amp;r&amp;\cdots&amp;m\\m+1&amp;m+2&amp;\cdots&amp;m+r&amp;\cdots &amp;2m\\\vdots\(n-1)m+1&amp;(n-1)m+2&amp;\cdots&amp;(n-1)m+r&amp;\cdots&amp;nm\end{bmatrix}$</p>
+<p>显然，该矩阵包含$nm$个数</p>
+<p>则$\varphi(nm)$为上述矩阵中与$mn$互质的数的个数</p>
+<p>$\because\gcd(n,m)=1$</p>
+<p>$\therefore\varphi(nm)=$与$n,m$同时互质的数的个数</p>
+<p>$\because\gcd(km+r,m)=\gcd(r,m)$</p>
+<p>$\therefore$每一列$n$个元素同时与$m$互质当且仅当$\gcd(r,m)=1$</p>
+<p>$\therefore$与$m$互质的列共$\varphi(m)$对</p>
+<p>假定$\gcd(r,m)=1$,则该行元素恰好构成$\mod n$完全剩余系</p>
+<p>$\therefore$其中恰好有$\varphi(n)$个数与$n$互质</p>
+<p>$\therefore \varphi(nm)=\varphi(n)\varphi(m)$</p>
+<p>2.证明$\sigma_0$为积性函数</p>
+<p>如果$n\not|m$</p>
+<p>则$nm$的每个约数$t$可以分解为一个$n$的约数$\gcd(n,t)$和一个$m$的约数$\gcd(m,t)$的积</p>
+<p>$\because n\not|m,t|(nm)\to t=\gcd(t,nm)=\gcd(t,n)\gcd(t,m)$</p>
+<p>and $a|n,b|m\to ab|nm$</p>
+<p>$\therefore a|n,b\not|n\to \gcd(ab,n)=a$</p>
+<p>$\therefore\sigma_0(nm)=\sigma_0(n)\sigma_0(m)$</p>
+<p>狄利克雷卷积:</p>
+<p>定义两个数论函数的狄利克雷卷积$*$:</p>
+<p>若$t=f*g$</p>
+<p>则$\sum_{i|n}f(i)g(\frac{n}{i})=t(n)$</p>
+<p>等价的写,即$\sum_{ij=n}f(i)g(j)=t(n)$</p>
+<p>狄利克雷卷积有如下性质:</p>
+<p>1.交换律,即$f<em>g=g</em>f$</p>
+<p>2.结合律,即$(f<em>g)</em>h=f<em>(g</em>h)$</p>
+<p>证明:</p>
+<p>$\sum_{(ij)k=n}(f(i)g(j))h(k)=\sum{i(jk)=n}f(i)(g(j)h(k))$</p>
+<p>3.分配律,即$(f+g)<em>h=f</em>h+g*h$</p>
+<p>证明:$(f+g)(x)=f(x)+g(x)$</p>
+<p>$\because \sum_{ij|n}(f+g)(i)h(j)$</p>
+<p>$=\sum_{ij|n}f(i)h(j)+g(i)h(j)$</p>
+<p>$=\sum_{ij|n}f(i)h(j)+\sum_{ij|n}g(i)h(j)$</p>
+<p>$=f<em>h+g</em>h$</p>
+<p>得证!</p>
+<p>4.数乘:$(xf)<em>g=x(f</em>g)$</p>
+<p>证明:构造数论函数$h$,使得$h(i)=x$</p>
+<p>根据结合律,可得$(hf)g=h(fg)$</p>
+<p>即$(xf)<em>g=x(f</em>g)$</p>
+<p>5.单位元$\epsilon * f=f$,其中$\epsilon=[n=1]=\begin{cases}1&amp;n=1\\0&amp;n&gt;1\end{cases}$</p>
+<p>6.逆元,对于每一个$f(1)\not=0$的函数$f$,都存在函数$g$使得$f*g=\epsilon$</p>
+<p>证明:考虑构造该函数</p>
+<p>$g(n)=\frac{1}{f(1)}([n=1]-\sum_{i|n,i\not=1}f(i)(g\frac{n}{i}))$</p>
+<p>如此:</p>
+<p>$\sum_{i|n}f(i)g(\frac{n}{i})=f(1)g(n)+\sum_{i|n,i\not=1}f(i)g(\frac{n}{i})=[n=1]$</p>
+<p>这货有什么用??????</p>
+<p>有两个重要结论:</p>
+<p>$(1)$若$t=f*g$,$f,g$为积性函数,则$t$为积性函数</p>
+<p>证明:</p>
+<p>若$n\not|m$,则有:</p>
+<p>$t(nm)=\sum_{d|nm}f(d)g(\frac{nm}{d})$</p>
+<p>$=\sum_{a|n,b|m}f(ab)g(\frac{nm}{ab})$</p>
+<p>$=\sum_{a|n,b|m}f(a)f(b)g(\frac{n}{a})g(\frac{m}{b})$</p>
+<p>$=(\sum_{a|n}f(a)g(\frac{n}{a}))(\sum_{b|m}f(b)g(\frac{m}{b}))$</p>
+<p>$=t(n)t(m)$</p>
+<p>得证</p>
+<p>$(2)$积性函数的逆为积性函数</p>
+<p>考虑对$nm$的大小进行归纳:</p>
+<p>$i)$.$nm=1$时,$g(1)=1$,结论显然成立</p>
+<p>$ii)$.当$nm&gt;1$时,若$n’m’&lt;nm$,则$g(n’m’)=g(n’)g(m’)$</p>
+<p>可得:</p>
+<p>$g(nm)=-\sum_{d|nm,d\not=1}f(d)g(\frac{nm}{d})$</p>
+<p>$=-\sum_{a|n,b|m,ab\not=1}f(ab)g(\frac{nm}{ab})$</p>
+<p>$=-\sum_{a|n,b|m,ab\not=1}f(a)f(b)g(\frac{n}{a})g(\frac{m}{b})$</p>
+<p>$=f(1)f(1)g(n)g(m)-\sum_{a|n,b|m}f(a)f(b)g(\frac{n}{a})g(\frac{m}{b})$</p>
+<p>$=g(n)g(m)-(\sum_{a|n}f(a)g(\frac{n}{a}))(\sum_{b|m}f(b)g(\frac{m}{b}))$</p>
+<p>$=g(n)g(m)-\epsilon(n)\epsilon(m)$</p>
+<p>$=g(n)g(m)$</p>
+<p>P.S.:$\because nm&gt;1$</p>
+<p>$\therefore n\not=1\quad or\quad m\not=1$</p>
+<p>$\therefore \epsilon(n)\epsilon(m)=0$</p>
+<p>得证！</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>杜教筛</title>
+    <url>/2020/11/14/%E6%9D%9C%E6%95%99%E7%AD%9B/</url>
+    <content><![CDATA[<p>杜教筛:</p>
+<p>$i)\sigma_0$</p>
+<p>$\sum^n_{i=1}\sigma_0(i)=\sum^n_{i=1}\sum^n{j=1}[j|i]\times j=\sum^n_{j=1}\sum^n_{i=1}[j|i]\times j$</p>
+<p>$=\sum^n_{j=1}j\times\sum^n_{i=1}[j|i]$</p>
+<p>$=\sum^n_{i=1}i\times\sum^n_{j=1}[i|j]$</p>
+<p>$=\sum^n_{i=1}i\times\left\lfloor\frac{n}{i}\right\rfloor$</p>
+<p>$=\sum^n_{i=1}\frac{\left\lfloor\frac{n}{i}\right\rfloor(\left\lfloor\frac{n}{i}\right\rfloor+1)}{2}$</p>
+<p>$ii)\varphi$</p>
+<p>先证明$\sum_{d|n}\varphi(d)=n$</p>
+<p>$1.$若$n=1$,显然</p>
+<p>$2.$若$n\quad is\quad prime$,$\varphi(n)=n-1$</p>
+<p>则$\varphi(n)+\varphi(1)=n$</p>
+<p>$3.$若$n=p^r(p\quad is\quad prime)$</p>
+<p>$\varphi(n)=\prod_{i=1}^{m}(1-\frac{1}{p_i})$<br>$\sum_{d|n}\varphi(d)=\sum^k_{i=0}\varphi(p^i)$</p>
+<p>$=\sum^k_{i=1}\varphi(p^i)+1$</p>
+<p>$=\sum^k_{i=1}p^{i-1}(p-1)+1$</p>
+<p>$=p^k-1+1$</p>
+<p>$=p^k$</p>
+<p>对于其余正整数,由于$\varphi$为积性函数,略</p>
+<p>$\sum^n_{i=1}\varphi(i)$</p>
+<p>$\because \sum_{d|n}\varphi(d)=n=\varphi(n)+\sum_{d&lt;n,d|n}\varphi(d)$</p>
+<p>$\therefore \varphi(n)=n-\sum_{d&lt;n,d|n}\varphi(d)$</p>
+<p>令:$\phi(n)=\sum^n_{i=1}\varphi(i)$</p>
+<p>$=\sum_{i=1}^n(i-\sum_{d&lt;i,d|i}\varphi(d))$</p>
+<p>$=\frac{n(n+1)}{2}-\sum^n_{i=1}\sum_{d&lt;i,d|i}\varphi(d)$</p>
+<p>$=\frac{n(n+1)}{2}-\sum^n_{i=2}\sum_{d&lt;i,d|i}\varphi(d)$</p>
+<p>$=\frac{n(n+1)}{2}-\sum^{\frac{i}{d}\le n}_{\frac{i}{d}=2}\sum^{d\le\left\lfloor\frac{n}{\frac{i}{d}}\right\rfloor}_{d=1}\varphi(d)$</p>
+<p>$=\frac{n(n+1)}{2}-\sum^{i\le n}_{i=2}\sum^{d\le\left\lfloor\frac{n}{i}\right\rfloor}_{d=1}\varphi(d)$</p>
+<p>$=\frac{n(n+1)}{2}-\sum^{i\le n}_{i=2}\phi(\left\lfloor\frac{n}{i}\right\rfloor)$</p>
+<p>$iii)\mu$</p>
+<p>设$M(n)=\sum^n_{i=1}\mu(i)$</p>
+<p>$\because [n=1]=\sum_{d|n}\mu(d)$</p>
+<p>$1=\sum^n_{i=1}[i=1]$</p>
+<p>$=\sum^n_{i=1}\sum_{d|n}\mu(d)$</p>
+<p>$=\sum^n_{i=1}\sum_{d=1}^{\left\lfloor\frac{n}{i}\right\rfloor}\mu(d)$</p>
+<p>$=\sum^n_{i=1}\mu(\left\lfloor\frac{n}{i}\right\rfloor)$</p>
+<p>$=M(n)+\sum^n_{i=2}M(\left\lfloor\frac{n}{i}\right\rfloor)$</p>
+<p>$\therefore M(n)=1-\sum^n_{i=2}M(\left\lfloor\frac{n}{i}\right\rfloor)$</p>
+<p>下面证明几个狄利克雷卷积常用的方法</p>
+<p>$1.(f*\epsilon)=f$</p>
+<p>$(f*\epsilon)(n)=\sum_{d|n}f(d)\epsilon(\frac{n}{d})$</p>
+<p>$=\sum_{d=n}f(d)\epsilon(\frac{n}{d})+\sum_{d&lt;n,d|n}f(d)\epsilon(\frac{n}{d})$</p>
+<p>$=f(n)+0$</p>
+<p>$=f(n)$</p>
+<p>$2.I*\mu=\epsilon$</p>
+<p>$n=1$时,$I(n)\mu(n)=I(1)\mu(1)=1$</p>
+<p>$n&gt;1$时,$\sum_{d|n}\mu(d)I(\frac{n}{d})=0$</p>
+<p>$3.\mu*id=\varphi$</p>
+<p>$[n=1]=\sum_{d|n}\mu(d)$</p>
+<p>$\varphi(n)=\sum_{i=1}^n[gcd(i,n)=1]$</p>
+<p>$=\sum^n_{i=1}\sum_{d|gcd(i,n)=1}\mu(d)$</p>
+<p>$=\sum^n_{i=1}\sum_{d|i,d|n}\mu(d)$</p>
+<p>$=\sum_{d|n}\sum^n_{i=1}[d|i]\mu(d)$</p>
+<p>$=\sum_{d|n}\mu(d)\sum^n_{i=1}[d|i]$</p>
+<p>$=\sum_{d|n}\mu(d)\frac{n}{d}$</p>
+<p>$=\sum_{d|n}\mu(d)id(\frac{n}{d})$</p>
+<p>$=\mu*id$</p>
+<p>$\therefore \mu*id=\varphi$</p>
+<p>$4.I*id=\sigma$</p>
+<p>下面用一种更好的方法证明莫比乌斯反演</p>
+<p>$\because F(n)=\sum_{d|n}f(d)=\sum_{d|n}f(d)*I(\frac{d}{n})$</p>
+<p>$\therefore F=I*f$</p>
+<p>$\therefore \mu<em>F=\mu</em>I*f$</p>
+<p>$\therefore f=\mu*F$</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>生成函数(未完全完成)-提高版</title>
+    <url>/2020/11/14/%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0-2/</url>
+    <content><![CDATA[<p>生成函数,用生成函数求递推式:</p>
+<p>普通型生成函数(Ordinary Generating Function,简称OGF)</p>
+<p>$F(x)=\sum_{i=0}^{\infty}x^if_i$</p>
+<p>我们有如下运算</p>
+<p>$\sum_{n\ge 0}f_nx^n+\sum_{n\ge 0}g_nx^n=\sum_{n\ge 0}(f_n+g_n)x^n$</p>
+<p>$c\times\sum_{n\ge 0}f_nx^n=\sum_{n\ge 0}(cf_n)x^n$</p>
+<p>$(\sum_{n\ge 0}f_nx^n)(\sum_{n\ge 0}g_nx^n)=\sum_{n\ge 0}(\sum^n_{i=0}\binom{i}{n}f_ig_{n-i})x^n$</p>
+<p>前缀和:</p>
+<p>例子:定义$s_n=\sum^n_{i=0}a_i$</p>
+<p>求$s_n$的生成函数</p>
+<p>举个小例子:求斐波那契数列的前缀和</p>
+<p>$S(x)=\sum_{n\ge 0}s_nx^n$</p>
+<p>$=\sum_{n\ge 0}(\sum^n_{i=0}f_i)x^n$</p>
+<p>$=\sum_{i\ge 0}f_i\sum_{n\ge i}x^n$</p>
+<p>$=\sum_{i\ge 0}f_i\sum\frac{x^i}{1-x}$</p>
+<p>$=\frac{1}{1-x}\sum_{i\ge 0}f_ix^i$</p>
+<p>$=\frac{1}{1-x}F(x)$</p>
+<p>求一个函数前缀和的生成函数,只要把原生成函数乘上$\frac{1}{1-x}$即可</p>
+<p>所以斐波那契数列的前缀和的生成函数:$S(x)=\frac{x}{(1-x)(1-x-x^2)}$</p>
+<p>后面就略了</p>
+<p>1.Fibonacci数列</p>
+<p>设$F(x)=f_0+f_1x+f_2x^2+……$</p>
+<p>则有$F(x)-xF(x)-x^2F(x)=1$</p>
+<p>得$F(x)=\frac{1}{1-x-x^2}$</p>
+<p>设$F(x)=A\times(\frac{1}{x-a}-\frac{1}{x-b})$</p>
+<p>$\frac{1}{1-x-x^2}=\frac{a-b}{(x-a)(x-b)}$</p>
+<p>$(x-a)(x-b)=(a-b)(1-x-x^2)$</p>
+<p>$x^2-(a+b)x+ab=-(a-b)x^2-(a-b)x+(a-b)$</p>
+<p>$\begin{cases}a-b=-1\\ab=-1\end{cases}$</p>
+<p>$\begin{cases}a=\frac{1+\sqrt{5}}{2}\\b=\frac{1-\sqrt{5}}{2}\\A=\frac{\sqrt{5}}{5}\end{cases}$</p>
+<p>$\therefore f_x=\frac{\sqrt{5}}{5}((\frac{1+\sqrt{5}}{2})^x-(\frac{1-\sqrt{5}}{2})^x)$</p>
+<p>2.Catalan数</p>
+<p>$c_0=\begin{cases}1&amp;n=0\\ \sum^{n-1}_{i=0}c_ic_{n-i-1}&amp;n&gt;0\end{cases}$</p>
+<p>$C(x)=\sum_{n\ge 0}c_nx^n$</p>
+<p>$=1+\sum_{n\ge 1}(\sum^{n-1}_{i=0}c_ic_{n-i-1})x^n$</p>
+<p>$=1+x\sum_{n’\ge 0}(\sum^{n’}{i=0}c_ic_{n’-i})x^{n’}$</p>
+<p>$=1+xC^2(x)$</p>
+<p>$xC^2(x)-C(x)+1=0$</p>
+<p>我们解一元二次方程</p>
+<p>$C(x)=\frac{1\pm\sqrt{1-4x}}{2x}$</p>
+<p>经过观察,我们发现应该取$-$</p>
+<p>展开,根据广义二项式定理</p>
+<p>$\sqrt{1-4x}=\sum_{n\ge 0}\binom{\frac{1}{2}}{n}(-4x)^n$</p>
+<p>$=1+\sum_{n\ge 1}\frac{\frac{1}{2}\frac{-1}{2}\frac{-3}{2}……\frac{3-2n}{2}}{n!}(-4x)^n$</p>
+<p>$=1+\sum_{n\ge 1}\frac(-1)^{n-1}\frac{1\times 3\times 5\times …\times(2n-3)}{2^nn!}(-4x)^n$</p>
+<p>$=1-\sum_{n\ge 1}\frac{1\times 3\times 5\times … \times(2n-3)}{n!}(2x)^n$</p>
+<p>$=1-\sum_{n\ge 1}\frac{(2n-2)!}{(n-1)!\times n!\times 2^{n-1}}(2x)^n$</p>
+<p>$=1-2\sum_{n\ge 1}\frac{(2n-2)!}{(n-1)!\times n!}x^n$</p>
+<p>带入到C(x)中</p>
+<p>$C(x)=\frac{1}{2x}(2\sum_{n\ge 1}\frac{(2n-2)!}{(n-1)!\times n!}x^n)$</p>
+<p>$=\sum_{n\ge 1}\frac{(2n-2)!}{(n-1)!\times n!}x^{n-1}$</p>
+<p>$=\sum_{n\ge 0}\frac{2n!}{(n+1)!\times n!}x^n$</p>
+<p>$=\sum_{n\ge 0}\frac{\binom{2n}{n}}{n+1}x^n$</p>
+<p>于是$c_n=\frac{\binom(2n}{n}}{(n+1)}$</p>
+<p>3.Motzkin数</p>
+<p>$M_{n+2}=M_{N+1}+\sum^n_{i=0}M_iM_{n-i}$</p>
+<p>指数型生成函数(Exponential Generating Function,简称EGF):</p>
+<p>$F(x)=\sum_{n\ge 0}f_n\frac{x^n}{n!}$</p>
+<p>我们有如下的运算</p>
+<p>$\sum_{n\ge 0}f_n\frac{x^n}{n!}+\sum_{n\ge 0}g_n\frac{x^n}{n!}=\sum_{n\ge 0}(f_n+g_n)\frac{x^n}{n!}$</p>
+<p>$c\times\sum_{n\ge 0}f_n\frac{x^n}{n!}=\sum_{n\ge 0}(cf_n)\frac{x^n}{n!}$</p>
+<p>$(\sum_{n\ge 0}f_n\frac{x^n}{n!})(\sum_{n\ge 0}g_n\frac{x^n}{n!})=\sum_{n\ge 0}(\sum^n_{i=0}\binom{n}{i}f_ig_{n-i})\frac{x^n}{n!}$</p>
+<p>用生成函数求递推式</p>
+<p>1.Fibonacci数列</p>
+<p>我们定义$f_i=f_{i-1}+f_{i-2}$</p>
+<p>有$f_{0}=0,f_{1}=1$</p>
+<p>定义生成函数$F(x)=\sum^{\infty}_{i=0}f_ix^i$</p>
+<p>很显然的,我们发现$F(x)=x+xF(x)+x^2F(x)$</p>
+<p>得到:$F(x)=\frac{x}{1-x-x^2}$</p>
+<p>然而这货并没有什么用,我们尝试搞出$f_i$的通项公式</p>
+<p>考虑把$\frac{x}{1-x-x^2}$分解为$\frac{A}{1-ax}+\frac{B}{1-bx}$</p>
+<p>我们尝试分解:$(1-ax)(1-bx)=1-x-x^2$</p>
+<p>很明显的,$a=\frac{1+\sqrt{5}}{2},b=\frac{1-\sqrt{5}}{2}$</p>
+<p>解得$A=\frac{1}{\sqrt{5}},B=-A$</p>
+<p>得到$f_x=\frac{1}{\sqrt{5}}(a^x-b^x)$</p>
+<p>举几个直接把生成函数转换成递推式的例子:</p>
+<p>$1,1,1,1,1,1……,1\to\frac{1}{1-x}$(无限个1)</p>
+<p>$C^N_N,C^N_{N+1},……\to\frac{1}{(1-x)^{N+1}}$</p>
+<p>$1,1,1,1……,1\to\frac{1-x^{N+1}}{1-x}$(N个1)</p>
+<p>$1,0,1,0,1,0……\to\frac{1}{1-x^2}$</p>
+<p>$0,1,0,1,0,1……\to\frac{x}{1-x^2}$</p>
+<p>$c^0,c^1,c^2……\to\frac{1}{1-cx}$</p>
+<p>$\frac{1}{1},\frac{-1}{2},\frac{1}{3}……=In(1+x)$</p>
+<p>$\frac{1}{1},\frac{1}{2},\frac{1}{3}……=In(\frac{1}{1-x})$</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>类欧几里得算法</title>
+    <url>/2020/11/14/%E7%B1%BB%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<p>类欧几里得算法</p>
+<p>设$f(a,b,c,n)=\sum^n_{i=0}\left\lfloor\frac{ai+b}{c}\right\rfloor$</p>
+<p>若$a\ge c$或$b\ge c$</p>
+<p>$f(a,b,c,n)=\sum^n_{i=0}\left\lfloor\frac{ai+b}{c}\right\rfloor$</p>
+<p>$=\sum^n_{i=0}\left\lfloor\frac{(\left\lfloor\frac{a}{c}\right\rfloor c+a\mod c)i+(\left\lfloor\frac{b}{c}\right\rfloor c+b\mod c)}{c}\right\rfloor$</p>
+<p>$=\frac{n(n+1)}{2}\left\lfloor\frac{a}{c}\right\rfloor+(n+1)\left\lfloor\frac{b}{c}\right\rfloor+\sum^n_{i=0}\left\lfloor\frac{(a\mod c)i+(b\mod c)}{c}\right\rfloor$</p>
+<p>$=\frac{n(n+1)}{2}\left\lfloor\frac{a}{c}\right\rfloor+(n+1)+f(a\mod c,b\mod c,c,n)$</p>
+<p>若$a&lt;c$或$b&lt;c$</p>
+<p>$\sum^n_{i=0}\left\lfloor\frac{ai+b}{c}\right\rfloor$</p>
+<p>$=\sum^n_{i=0}\sum^{\left\lfloor\frac{ai+b}{c}\right\rfloor -1}_{j=0} 1$</p>
+<p>$=\sum^{\left\lfloor\frac{an+b}{c}\right\rfloor-1}_{j=0}\sum^n_{i=0}[j&lt;\left\lfloor\frac{ai+b}{c}\right\rfloor]$</p>
+<p>$\because j&lt;\left\lfloor\frac{ai+b}{c}\right\rfloor$</p>
+<p>$\therefore j+1\le \left\lfloor\frac{ai+b}{c}\right\rfloor$</p>
+<p>$\therefore j+1\le \frac{ai+b}{c}$</p>
+<p>$\therefore jc+c\le ai+b$</p>
+<p>$\therefore jc+c-b-a&lt;ai$</p>
+<p>$\left\lfloor\frac{jc+c-b-1}{a}\right\rfloor&lt;i$</p>
+<p>令$m=\left\lfloor\frac{an+b}{c}\right\rfloor$</p>
+<p>$f(a,b,c,n)=\sum^{m=1}_{j=0}\sum^n_{i=0}[i&gt;\left\lfloor\frac{jc+c-b-1}{a}\right\rfloor]$</p>
+<p>$=\sum^{m-1}_{j=0}n-\left\lfloor\frac{jc+c-b-1}{a}\right\rfloor$</p>
+<p>$=nm-f(c,c-b-1,a,m-1)$</p>
+<p>$g(a,b,c,n)=\sum^n_{i=0}i\left\lfloor\frac{ai+b}{c}\right\rfloor$</p>
+<p>$h(a,b,c,n)=\sum^n_{i=0}(\left\lfloor\frac{ai+b}{c}\right\rfloor)^2$</p>
+<p>$i)$推导$g$</p>
+<p>若$a\ge c$或$b\ge c$</p>
+<p>$g(a,b,c,n)=\sum^n_{i=0}i\left\lfloor\frac{ai+b}{c}\right\rfloor$</p>
+<p>$=\sum^n_{i=0}i\left\lfloor\frac{\left\lfloor\frac{a}{c}\right\rfloor ci+(a\mod c)i+\left\lfloor\frac{b}{c}\right\rfloor c+(b\mod c)}{c}\right\rfloor$</p>
+<p>$=\sum^n_{i=0}i\left\lfloor\frac{\left\lfloor\frac{a}{c}\right\rfloor i+\left\lfloor\frac{b}{c}\right\rfloor+\frac{(a\mod c)i+(b\mod c)}{c}}{c}\right\rfloor$</p>
+<p>$=\sum^n_{i=0}i^2\left\lfloor\frac{a}{c}\right\rfloor+\sum^n_{i=0}i\left\lfloor\frac{b}{c}\right\rfloor+\sum^n_{i=0}i\left\lfloor\frac{(a\mod c)i+(b\mod c)}{c}\right\rfloor$</p>
+<p>$=\left\lfloor\frac{a}{c}\right\rfloor\frac{n(n+1)(2n+1)}{6}+\left\lfloor\frac{b}{c}\right\rfloor\frac{n(n+1)}{2}+g(a\mod c,b\mod c,c,n)$</p>
+<p>若$a&lt;c$且$b&lt;c$</p>
+<p>令$m=\left\lfloor\frac{an+b}{c}\right\rfloor$</p>
+<p>$g(a,b,c,n)=\sum^n_{i=0}i\left\lfloor\frac{ai+b}{c}\right\rfloor$</p>
+<p>$=\sum^{m-1}_{j=0}\sum^n_{i=0}[j&lt;\left\lfloor\frac{ai+b}{c}\right\rfloor]i$</p>
+<p>令$t=\left\lfloor\frac{jc+c-b-1}{a}\right\rfloor$</p>
+<p>原式$=\sum^{m-1}_{j=0}\sum^n_{i=0}[i&gt;t]i$</p>
+<p>$=\sum^{m-1}_{j=0}\frac{1}{2}(t+n+1)(n-t)$</p>
+<p>$=\frac{1}{2}[mn(n+1)-\sum^{m-1}_{j=0}t^2-\sum^{m-1}_{j=0}t]$</p>
+<p>$=\frac{1}{2}[mn(n+1)-h(c,c-b-1,a,m-1)-f(c,c-b-1,a,m-1)]$</p>
+<p>$ii)$推导$h$</p>
+<p>若$a\ge c$或$b\ge c$</p>
+<p>设$h(a,b,c,n)=\sum^n_{i=0}(\left\lfloor\frac{ai+b}{c}\right\rfloor)^2$</p>
+<p>$=\sum^n_{i=0}(\left\lfloor\frac{\left\lfloor\frac{a}{c}\right\rfloor ci+\left\lfloor\frac{b}{c}\right\rfloor c+(a\mod  c)i+(b\mod c)}{c}\right\rfloor)^2$</p>
+<p>$=\sum^n_{i=0}(\left\lfloor\frac{a}{c}\right\rfloor)^2+\sum^n_{i=0}(\left\lfloor\frac{b}{c}\right\rfloor)^2+\sum^n_{i=0}(\left\lfloor\frac{(a\mod c)i+(b\mod c)}{c}\right\rfloor)^2+2\sum^n_{i=0}\left\lfloor\frac{a}{c}\right\rfloor i\left\lfloor\frac{b}{c}\right\rfloor$</p>
+<p>$+2\sum^n_{i=0}\left\lfloor\frac{a}{c}\right\rfloor i\left\lfloor\frac{(a\mod c)i+(b\mod c)}{c}\right\rfloor+2\sum^n_{i=0}\left\lfloor\frac{b}{c}\right\rfloor \left\lfloor\frac{(a\mod c)i+(b\mod c)}{c}\right\rfloor$</p>
+<p>$=\frac{n(n+1)(2n+1)}{6}\sum^n_{i=0}(\left\lfloor\frac{a}{c}\right\rfloor)^2+(\left\lfloor\frac{b}{c}\right\rfloor)^2(n+1)+h(a\mod c,b\mod c,c,n)+\left\lfloor\frac{a}{c}\right\rfloor\centerdot\left\lfloor\frac{b}{c}\right\rfloor n(n+1)$</p>
+<p>$+2g(a\mod c,b\mod c,c,n)+2f(a\mod c,b\mod c,c,n)$</p>
+<p>考虑$a&lt;c$且$b&lt;c$</p>
+<p>设$m=\left\lfloor\frac{an+b}{c}\right\rfloor,t=\left\lfloor\frac{jc+c-b-1}{a}\right\rfloor$</p>
+<p>$\because n^2=2\times\frac{n(n+1)}{2}-n=(2\sum^n_{i=0}i)-n$</p>
+<p>$\therefore h(a,b,c,n)=\sum^n_{i=0}(\left\lfloor\frac{ai+b}{c}\right\rfloor)^2$</p>
+<p>$=\sum^n_{i=0}[(2\sum^{\left\lfloor\frac{ai+b}{c}\right\rfloor}_{j=1}j)-\left\lfloor\frac{ai+b}{c}\right\rfloor]$</p>
+<p>$=(2\sum^n_{i=0}\sum^{\left\lfloor\frac{ai+b}{c}\right\rfloor}_{j=1}j)-f(a,b,c,n)$</p>
+<p>考虑化简前一部分</p>
+<p>$(2\sum^n_{i=0}\sum^{\left\lfloor\frac{ai+b}{c}\right\rfloor}_{j=1}j)$</p>
+<p>$=(2\sum^n_{i=0}\sum^{\left\lfloor\frac{ai+b}{c}\right\rfloor-1}_{j=0}(j+1))$</p>
+<p>$=\sum^{m-1}_{j=0}(j+1)\sum^n_{i=0}[j&lt;\left\lfloor\frac{ai+b}{c}\right\rfloor]$</p>
+<p>$=\sum^{m-1}_{j=0}\sum^n_{i=0}[i&gt;t]$</p>
+<p>$=\sum^{m-1}_{j=0}(j+1)(n-t)$</p>
+<p>$=\frac{1}{2}nm(m+1)-g(c,c-b-1,a,m-1)-f(c,c-b-1,a,m-1)$</p>
+<p>综上$h(a,b,c,n)=nm(m+1)-2g(c,c-b-1,a,m-1)-2f(c,c-b-1,a,m-1)-f(a,b,c,n)$</p>
+<p>记忆化递归即可!</p>
+<p>复杂度$O(\log n)$</p>
+<p>Solved!</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>生成函数-初学版</title>
+    <url>/2020/11/14/%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<p>$1$</p>
+<p>根据二项式定理，有$(x+1)^n=C^0_N+C^1_Nx+……+C^N_Nx^N$</p>
+<p>当标志函数为$f_k(x)=x^k$时，$(x+1)^n$就是数列$\{C^0_n,C^1_n,……,C^n_n\}$的生成函数</p>
+<p>更一般的，$F(x)=a_0f_0(x)+a_1f_1(x)+…$是数列$\{a_0,a_1,……\}$的生成函数，其中标志函数为$f_k(x)$</p>
+<p>普通型母函数指标志函数为$f_k(x)=x^k$的生成函数</p>
+<p>例1:有一个数列$\{1,1,1,1,1,….\}$，其普通型母函数为$F(x)=1+x+x^2+x^3+…$(1)</p>
+<p>则$xF(x)=2+x^2+x^3+…$(2)</p>
+<p>(1)-(2)得:$(1-x)F(x)=1$</p>
+<p>$F(x)=\frac{1}{x-1}$</p>
+<p>则我们称$\frac{1}{x-1}$为$1+x+x^2+x^3+……$的普通型母函数</p>
+<p>很容易发现,当$x$的范围不在$-1&lt;x &lt; 1$时，这个式子其实是不成立的，但此时这个函数不收敛，没有意义</p>
+<p>例2:有$n$个重量为$1g$的砝码,$m$个重量为$2g$的砝码，求一共有几种方式称出$cg$,一共能称出多少种不同的重量</p>
+<p>$(1+x+x^2+…+x^n)(1+x^2+x^4+…+x^{2m})$的项数为第二问的答案,$x^c$的项数为第一问的答案</p>
+<p>考虑动态规划,$a_i$为$i$g可以拼出的种数，考虑增加$c$个$b$g砝码，我可以考虑不加这个砝码，加1个，加2个……，对应的就是${a_i}$的母函数乘上$(1+x^b+x^{2b}+……+x^{cb})$</p>
+<p>用途:在一些毒瘤动规题中进行优化</p>
+<p>例3:求$10$进制下,M位的，写出来有偶数个5的数字个数</p>
+<p>分类讨论:</p>
+<p>1.一个有$m-1$位的有偶数个5的数末尾添了一个非5数</p>
+<p>2.一个$m-1$位的，有奇数个5的数末尾添了一个5</p>
+<p>也就是说</p>
+<p>$a_m=10a_{m-1}+b_{m-1}$</p>
+<p>$b_m=10nb_{m-1}+a_{m-1}$</p>
+<p>考虑构造$a,b$的普通型母函数$A(x)$和$B(x)$</p>
+<p>有</p>
+<p>$A(x)-9xA(x)-xB(x)=a_1=8$</p>
+<p>$B(x)-9xB(x)-xA(x)=b_1=1$</p>
+<p>两式相加</p>
+<p>$(1-10x)(A(x)-B(x))=9$</p>
+<p>两式相减</p>
+<p>$(1-8x)(A(x)+B(x))=7$</p>
+<p>有</p>
+<p>$A(x)+B(x)=\frac{7}{1-8x}$</p>
+<p>$A(x)-B(x)=\frac{9}{1-10x}$</p>
+<p>解得</p>
+<p>$A(x)=\frac{8-71x}{(1-8x)(1-10x)}$</p>
+<p>$B(x)=\frac{1-x}{(1-8x)(1-10x)}$</p>
+<p>转化一下</p>
+<p>$A(x)=\frac{1}{2}(\frac{7}{1-8x}+\frac{9}{1-10x})$</p>
+<p>注意到</p>
+<p>$1+x+x^2+x^3+…=\frac{1}{1-x}$</p>
+<p>于是</p>
+<p>$A(x)=\frac{1}{2}\sum^{\infty}_{i=0}7\times(8x)^i+9\times(10x)^i$</p>
+<p>$a_n=\frac{1}{2}(7\times8^n+9\times10^n)$</p>
+<p>可以在$O(logn)$的时间内用快速幂解决</p>
+<p>例4:斐波那契数列通项公式</p>
+<p>设$F(x)=f_0+f_1x+f_2x^2+……$</p>
+<p>则有$F(x)-xF(x)-x^2F(x)=1$</p>
+<p>得$F(x)=\frac{1}{1-x-x^2}$</p>
+<p>设$F(x)=A\times(\frac{1}{x-a}-\frac{1}{x-b})$</p>
+<p>$\frac{1}{1-x-x^2}=\frac{a-b}{(x-a)(x-b)}$</p>
+<p>$(x-a)(x-b)=(a-b)(1-x-x^2)$</p>
+<p>$x^2-(a+b)x+ab=-(a-b)x^2-(a-b)x+(a-b)$</p>
+<p>$\begin{cases}a-b=-1\\ab=-1\end{cases}$</p>
+<p>$\begin{cases}a=\frac{1+\sqrt{5}}{2}\\b=\frac{1-\sqrt{5}}{2}\\A=\frac{\sqrt{5}}{5}\end{cases}$</p>
+<p>$\therefore f_x=\frac{\sqrt{5}}{5}((\frac{1+\sqrt{5}}{2})^x-(\frac{1-\sqrt{5}}{2})^x)$</p>
+<p>更一般的,对于生成函数$F(x)=A\times(\frac{1}{x-a}+\frac{1}{x-b}+….)$</p>
+<p>数列的通项公式为$f_x=A\times(a^x+b^x+…)$</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>莫比乌斯反演</title>
+    <url>/2020/11/14/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/</url>
+    <content><![CDATA[<p>$0802$</p>
+<p>线性筛，莫比乌斯反演，整数分块<br>1.</p>
+<p>设$f(x)=\sum^{d=1}_{d|n}=g(d)$</p>
+<p>有$f(1)=g(1)$,$f(12)=g(1)+g(2)+g(3)+g(4)+g(6)+g(12)$</p>
+<p>根据定义有$g(1)=f(1)$,$g(12)=f(12)-f(6)-f(4)+f(2)$</p>
+<p>发现$g(12)$的算法中有$+$有$-$而且$f(3),f(1)$没有</p>
+<p>我们可以定义函数$\mu(d)$</p>
+<p>使得$g(n)=\sum^{d=1}_{d|n}=f(d)\times\mu(\frac{n}{d})$</p>
+<p>令$d’=\frac{n}{d},g(n)=\sum^{d=1}_{d|n}f(\frac{n}{d’})\times\mu(d’)$</p>
+<p>$\therefore g(n)=\sum^{d=1}_{d|n}f(\frac{n}{d})\times\mu(d)$</p>
+<p>我们称$\mu(n)$为莫比乌斯函数</p>
+<p>定义为:</p>
+<p>$(1)$若$d=1$,$\mu(d)=1$</p>
+<p>$(2)$若$d=p_1\times p_2\times……\times p_k$,其中$p_i(1\leq i\leq k)$为互异的质数,则$\mu(d)=(-1)^k$</p>
+<p>$(3)$否则$\mu(d)=0$</p>
+<p>性质1:对于任意正整数$n$,有$\sum^{d=1}_{d|n}\mu(d)=\begin{cases}1&amp;n=1 \\0&amp; otherwise\end{cases}$</p>
+<p>证明:</p>
+<p>$(1)$若$n=1$,$\sum^{d=1}_{d|n}\mu(d)=\mu(1)=1$</p>
+<p>$(2)$若$n&gt;1$,设$n=p_1^{x_1}\times p_2^{x_2}\times ……\times p_k^{x_k}$，其中$p_i(1\le i\le k)$的互异质因子</p>
+<p>设$d=p_1^{y_1}\times p_2^{y_2}\times …… \times p_k^{y_k}$，其中$p\le y_i\le x_i(1\le i\le k)$,当存在某一个$y_i&gt;1$时,$\mu(d)=0$</p>
+<p>因此只需考虑$y_i=0\quad Or\quad 1$即可</p>
+<p>设$d$中有$r$个$n$的互异因子</p>
+<p>则$\mu(d)=(-1)^r$</p>
+<p>这样的$d$有$C^r_k$个</p>
+<p>$\therefore \sum^{d=1}_{d|n}\mu(d)=\sum^{r=1}_{k}C^r_k\times(-1)^r=(1-1)^k=0$</p>
+<p>性质2:$\mu(n)$为积性函数</p>
+<p>证明:</p>
+<p>$(1)$当$n=1$时,$\mu(1)=1$</p>
+<p>$(2)$当$a,b$互质时，分九种情况讨论</p>
+<p>$i)$若$\mu(a)\quad or\quad\mu(b)=0$时,$\mu(ab)=0$</p>
+<p>$ii)$若$\mu(a)=1\quad and\quad mu(b)=-1\qquad or \qquad\mu(a)=-1\quad and\quad\mu(b)=1$时</p>
+<p>分解$a,b$,$a=\prod^{c}_{i=1}p_i,b=\prod^{d}_{i=1}q_i$</p>
+<p>根据定义,$2\not|c\quad and \quad 2|d\qquad or \qquad 2\not|d\quad and \quad 2|c$</p>
+<p>$\because gcd(a,b)=1$</p>
+<p>$\therefore p_i\not=q_i(1\le i\le min(c,d))$</p>
+<p>$\therefore \mu(ab)=-1=\mu(a)\mu(b)$</p>
+<p>$iii)$若$\mu(a)=1\quad and\quad \mu(b)=1\qquad or \qquad\mu(a)=-1\quad and\quad\mu(b)=-1$时</p>
+<p>分解$a,b$,$a=\prod^{c}_{i=1}p_i,b=\prod^{d}_{i=1}q_i$</p>
+<p>根据定义,$2|c\quad and \quad 2|d\qquad or \qquad 2\not|d\quad and \quad 2\not|c$</p>
+<p>$\because gcd(a,b)=1$</p>
+<p>$\therefore p_i\not=q_i(1\le i\le min(c,d))$</p>
+<p>$\therefore \mu(ab)=1=\mu(a)\mu(b)$</p>
+<p>3.证明$f(n)=\sum_{d|n}g(d)\to g(n)=\sum_{d|n}f(\frac{n}{d})\times\mu(d)$</p>
+<p>$g(n)=\sum_{d|n}f(\frac{n}{d})\times\mu(d)$</p>
+<p>$=\sum_{d|n}f(\frac{n}{d})\times\mu(d)=\sum_{d|n}\mu(d)\sum_{i|\frac{n}{d}}g(i)=\sum_{i|n}g(i)\sum_{i*d|n}\mu(d)=\sum_{i|n}g(i)\sum_{d|\frac{n}{i}}\mu(d)$</p>
+<p>根据莫比乌斯函数性质1:对于任意整数$n$,有$\sum_{d|n}\mu(d)=\begin{cases} 1 &amp; n=1 \\ 0 &amp; n&gt;1 \end{cases}$</p>
+<p>考虑$\sum_{d|\frac{n}{i}}\mu(d)$的值</p>
+<p>$i)$当$i=n$时,$\sum_{d|\frac{n}{i}}\mu(d)=1,g(i)\times\sum_{d|\frac{n}{i}}\mu(d)=g(n)$</p>
+<p>$ii)$当$i$取小于$n$的约数时,$\sum_{d|\frac{n}{i}}\mu(d)=0,g(i)\sum_{d|\frac{n}{i}}\mu(d)=0$</p>
+<p>综上,$g(n)=\sum_{d|n}f(\frac{n}{d})\times\mu(d)=g(n)$,得证!</p>
+<p>莫比乌斯函数的变形:</p>
+<p>$i)f(i)=\sum_{d=1}^{\left\lfloor{\frac{n}{i}}\right\rfloor}g(d\times i)\to g(i)=\sum_{d=1}^{\left\lfloor{\frac{n}{i}}\right\rfloor} f(d\times i)\mu(d)$</p>
+<p>$ii)f(i)=\sum_{i|d,d\leq n} g(d)\to g(i)=\sum_{i|d,d\leq n}f(d)\times \mu(\frac{d}{i})$</p>
+<p>$iii)f(n)$和$g(n)$是定义在正整数集合上两个函数,并满足$f(n)=\sum_{d|n}g(d)$,$g(n)$是积性函数的充分必要条件是$f(n)$是积性函数</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+      </tags>
+  </entry>
 </search>
