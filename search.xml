@@ -15,27 +15,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>费马小定理</title>
-    <url>/2020/11/14/%E8%B4%B9%E9%A9%AC%E5%AE%9A%E7%90%86/</url>
-    <content><![CDATA[<p>费马小定理：若$p$是一个质数,则$a^p\equiv a\pmod{p}$</p>
-<p>证明：</p>
-<p>设$p|(a^p-a)$</p>
-<p>则$(a+1)^p-(a+1)$</p>
-<p>$=\sum^{p}_{k=0}C^k_p\times a^k-a-1$</p>
-<p>$=\sum^{p-1}_{k=1}C^k_p\times a^k +a^p-a$</p>
-<p>$\because\sum^{p-1}_{k=1}C^k_p\times a^k \equiv 0\pmod{p}$</p>
-<p>且$p|(a^p-a)$</p>
-<p>$\therefore (a+1)^p-(a+1)\equiv 0\pmod{p}$</p>
-<p>$\because$在$a=1$时，$a^p\equiv 1\pmod{p}$,且若$p|(a^p-a)$，则$(a+1)^p-(a+1)\equiv 0\pmod{p}$</p>
-<p>根据数学归纳法知，$a^p-a\equiv 0\pmod{p}$</p>
-<p>$\therefore a^{p-1}\equiv 1\pmod{p}$</p>
-<p>得证</p>
-]]></content>
-      <tags>
-        <tag>数学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>欧拉定理及其拓展</title>
     <url>/2020/11/14/%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86%E5%8F%8A%E5%85%B6%E6%8B%93%E5%B1%95/</url>
     <content><![CDATA[<p>欧拉定理:若$gcd(a,n)=1$,则$a^{\varphi(m)}\equiv1\pmod{m}$</p>
@@ -72,6 +51,27 @@
 <p>$\therefore c\geq\varphi(m)$</p>
 <p>$\therefore (p^{r})^c\equiv (p^{r})^{c\mod\varphi(m)+\varphi(m)}\pmod{m}$</p>
 <p>根据唯一分解定理及数学归纳法，可知对于任意正整数$a$，上述式子均成立</p>
+<p>得证</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>费马小定理</title>
+    <url>/2020/11/14/%E8%B4%B9%E9%A9%AC%E5%AE%9A%E7%90%86/</url>
+    <content><![CDATA[<p>费马小定理：若$p$是一个质数,则$a^p\equiv a\pmod{p}$</p>
+<p>证明：</p>
+<p>设$p|(a^p-a)$</p>
+<p>则$(a+1)^p-(a+1)$</p>
+<p>$=\sum^{p}_{k=0}C^k_p\times a^k-a-1$</p>
+<p>$=\sum^{p-1}_{k=1}C^k_p\times a^k +a^p-a$</p>
+<p>$\because\sum^{p-1}_{k=1}C^k_p\times a^k \equiv 0\pmod{p}$</p>
+<p>且$p|(a^p-a)$</p>
+<p>$\therefore (a+1)^p-(a+1)\equiv 0\pmod{p}$</p>
+<p>$\because$在$a=1$时，$a^p\equiv 1\pmod{p}$,且若$p|(a^p-a)$，则$(a+1)^p-(a+1)\equiv 0\pmod{p}$</p>
+<p>根据数学归纳法知，$a^p-a\equiv 0\pmod{p}$</p>
+<p>$\therefore a^{p-1}\equiv 1\pmod{p}$</p>
 <p>得证</p>
 ]]></content>
       <tags>
